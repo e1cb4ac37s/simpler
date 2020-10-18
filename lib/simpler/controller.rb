@@ -21,8 +21,14 @@ module Simpler
       @response.finish
     end
 
+    protected
+
     def status(code)
       @response.status = code
+    end
+
+    def headers
+      @response.headers
     end
 
     private
