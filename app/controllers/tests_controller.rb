@@ -8,4 +8,7 @@ class TestsController < Simpler::Controller
 
   end
 
+  def show
+    @test = Test.first(id: params[:id].to_i)
+  end
 end
