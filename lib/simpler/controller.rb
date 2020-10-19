@@ -6,8 +6,10 @@ module Simpler
     attr_reader :name, :request, :response
 
     def initialize(env)
-      @name = extract_name
-      @request = Rack::Request.new(env)
+      @name     = extract_name
+      @request  = Rack::Request.new(env)
+      @request.params.merge!(env['simpler.params'])
+
       @response = Rack::Response.new
     end
 

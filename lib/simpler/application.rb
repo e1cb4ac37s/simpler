@@ -32,6 +32,7 @@ module Simpler
       return not_found if route.nil?
 
       controller = route.controller.new(env)
+
       action = route.action
 
       make_response(controller, action)
